@@ -20,10 +20,7 @@ function verify(credentials) {
     const environmentType = credentials.environmentType;
     const apiVersion      = credentials.apiVersion;
 
-    //call to format auth header. Put this into a utility. Doesnt belong here long term
-    var credentials = util.format("%s:%s", username, password);
-    var headerAuth  = 'Basic ' + new Buffer(credentials).toString('base64');
-
+    //check for missing values and throw errors if not found
     if (!username) {
         throw new Error('Username is missing');
     }else if(!password){
@@ -34,9 +31,26 @@ function verify(credentials) {
         throw new Error('API Version is missing');
     }
 
+    //call to format auth header. Put this into a utility. Doesnt belong here long term
+    var credentials    = util.format("%s:%s", username, password);
+    var headerAuth     = 'Basic ' + new Buffer(credentials).toString('base64');
+    var environmentURL = ''
+
+    switch(environmentType){
+        case 'Dev':
+            environmentURL = 'https://thilabs.com/rv.dev/api';
+        break;
+        case 'Stage':
+            environmentURL = 'https://thilabs.com/rv.stage/api';
+        break;
+        case 'Prod':
+            environmentURL = 'https://rv.treehousei.com/api';
+        break;
+    }
+
     // sending a request to the most simple endpoint of the target API
     const requestOptions = {
-        uri: environmentType + '/objects/' + apiVersion +'/PartnerLevel',
+        uri: environmentURL + '/objects/' + apiVersion +'/PartnerLevel',
         headers: {
             'Authorization': headerAuth
         },
