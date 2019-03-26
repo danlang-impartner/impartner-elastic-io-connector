@@ -1,14 +1,40 @@
 {
   "title": "Impartner PRM (Beta)",
   "description": "Beta Impartner PRM component for connecting with Impartner PRM",
-  "docsUrl": "https://github.com/elasticio/petstore-component-nodejs",
+  "docsUrl": "https://github.com/danlang-impartner/impartner-elastic-io-connector",
   "credentials": {
     "fields": {
-      "apiKey": {
-        "label": "API key",
+      "username": {
+        "label": "Username",
         "required": true,
-        "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <b>elasticio</b> as API key. For more details see <a href='https://petstore.elastic.io/docs/' target='_blank'>Petstore API docs</a>."
+        "viewClass": "TextFieldView",
+        "note": "Username for the Impartner PRM Integration user"
+      },
+      "password": {
+        "label": "Password",
+        "required": true,
+        "viewClass": "PasswordFieldView",
+        "note": "Password for the Impartner PRM Integration user"
+      },
+      "environmentType": {
+        "label": "Environment Type",
+        "required": true,
+        "viewClass": "SelectView",
+        "model": {
+          "https://thilabs.com/rv.dev/api":   "Development",
+          "https://thilabs.com/rv.stage/api": "Staging",
+          "https://rv.treehousei.com/api":    "Production"
+        },
+        "prompt": "Select the Impartner Environment Type for this connection"
+      },
+      "apiVersion": {
+        "label": "Environment Type",
+        "required": true,
+        "viewClass": "SelectView",
+        "model": {
+          "v1":   "V1"
+        },
+        "prompt": "Select API Version"
       }
     }
   },
@@ -76,7 +102,7 @@
   "actions": {
     "createPetWithPromise": {
       "main": "./lib/actions/createPetWithPromise.js",
-      "title": "Create a Pet With Promise",
+      "title": "Create New Account",
       "metadata": {
         "in": "./lib/schemas/createPet.in.json",
         "out": "./lib/schemas/createPet.out.json"
@@ -84,7 +110,7 @@
     },
     "createPetWithGenerators": {
       "main": "./lib/actions/createPetWithGenerators.js",
-      "title": "Create a Pet With Generators",
+      "title": "Create New Member",
       "metadata": {
         "in": "./lib/schemas/createPet.in.json",
         "out": "./lib/schemas/createPet.out.json"
