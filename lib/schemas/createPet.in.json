@@ -8,9 +8,11 @@
       "muscles": "bananas"
     },
     "partnerLevel": {
-      "type": "number",
+      "type": "string",
       "required": true,
-      "title": "Partner Level"
+      "title": "Partner Level",
+      "enum":["Reseller","Partner"],
+      "enumLookupType": "number"
     }
   }
 }

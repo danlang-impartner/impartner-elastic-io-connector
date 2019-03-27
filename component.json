@@ -103,24 +103,8 @@
     "createPetWithPromise": {
       "main": "./lib/actions/createPetWithPromise.js",
       "title": "Create New Account",
-      "fields": {
-        "name": {
-          "label": "Name",
-          "viewClass": "TextFieldWithNoteView",
-          "required": true,
-          "placeholder": "ABC Partner",
-          "muscles":"bananas",
-          "note": "You can use properties of message body as <em>${values}</em>&nbsp; in your name"
-        },
-        "partnerLevel": {
-          "label": "Partner Level",
-          "required": true,
-          "viewClass": "SelectView",
-          "model": "getPartnerLevelModel",
-          "prompt": "Select a Partner Level"
-        }
-      },
       "metadata": {
+        "in": "./lib/schemas/createPet.in.json",
         "out": "./lib/schemas/createPet.out.json"
       }
     },
