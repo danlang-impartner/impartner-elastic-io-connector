@@ -113,7 +113,7 @@
           "note": "You can use properties of message body as <em>${values}</em>&nbsp; in your name"
         },
         "partnerLevel": {
-          "label": "Pet Status",
+          "label": "Partner Level",
           "required": true,
           "viewClass": "SelectView",
           "model": "getPartnerLevelModel",
