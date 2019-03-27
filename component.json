@@ -21,9 +21,9 @@
         "required": true,
         "viewClass": "SelectView",
         "model": {
-          "https://thilabs.com/rv.dev/api":   "Development",
-          "https://thilabs.com/rv.stage/api": "Staging",
-          "https://rv.treehousei.com/api":    "Production"
+          "Dev":   "Development",
+          "Stage": "Staging",
+          "Prod":  "Production"
         },
         "prompt": "Select the Impartner Environment Type for this connection"
       },
