@@ -28,11 +28,11 @@
         "prompt": "Select the Impartner Environment Type for this connection"
       },
       "apiVersion": {
-        "label": "Environment Type",
+        "label": "API Version",
         "required": true,
         "viewClass": "SelectView",
         "model": {
-          "v1":   "V1"
+          "v1": "V1"
         },
         "prompt": "Select API Version"
       }
