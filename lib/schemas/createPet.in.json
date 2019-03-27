@@ -4,12 +4,13 @@
     "name": {
       "type": "string",
       "required": true,
-      "title": "Name"
+      "title": "Name",
+      "muscles": "bananas"
     },
-    "status": {
-      "type": "string",
+    "partnerLevel": {
+      "type": "numeric",
       "required": true,
-      "title": "Status"
+      "title": "Partner Level"
     }
   }
 }
