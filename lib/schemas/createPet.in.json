@@ -8,7 +8,7 @@
       "muscles": "bananas"
     },
     "partnerLevel": {
-      "type": "numeric",
+      "type": "number",
       "required": true,
       "title": "Partner Level"
     }
